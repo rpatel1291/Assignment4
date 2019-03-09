@@ -1,0 +1,17 @@
+{
+  "name": "assignment4",
+  "version": "1.0.0",
+  "description": "A Markdown Note Downloader",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Ravi Patel",
+    "cwid": "10432313",
+    "email": "rpate69@stevens.edu"
+  },
+  "license": "MIT"
+}
