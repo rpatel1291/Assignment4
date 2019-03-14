@@ -11,12 +11,16 @@ class Container extends React.Component {
         super(props)
         this.state = {
             text:"",
-            // html:"",
+            filename:"",
+            html:"",
         }
-        // this.updateValue = this.updateValue.bind(this)  
+        this.handleFileName = this.handleFileName.bind(this)
     }
     updateValue(text){
         this.setState({text})
+    }
+    handleFileName(event){
+        this.setState({filename: event.target.value})
     }
 
     render(){
@@ -28,14 +32,25 @@ class Container extends React.Component {
                 </nav>
                 <SplitPane split="vertical" defaultSize="50%">
                     <div className="input-section-pane">
-                        <h3>Editor: </h3>
+                        <h3 id="editor-section-id">Editor: </h3>
                         <InputSection  
                             updateValue={this.updateValue.bind(this)}
                         />
                     </div>
                     <div className="view-pane">
-                        <h3>Preview:</h3>
-                        <OutputSection 
+                        <h3 
+                            id="preview-section-id"
+                        >
+                            Preview File: {this.state.filename}
+                        </h3>
+                        <label>Enter File Name:
+                            <input 
+                                type="text"
+                                placeholder={this.state.filename}
+                                onChange={this.handleFileName.bind(this)}
+                            />
+                        </label>
+                        <OutputSection
                             sendText={this.state.text}  
                         />
                     </div>
