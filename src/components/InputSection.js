@@ -1,5 +1,7 @@
 import React from "react"
 import "../css/InputSection.css"
+const showdown = require("showdown")
+import ReactDOMServer from "react-dom/server"
 
 class InputSection extends React.Component {
     constructor(props) {
@@ -7,7 +9,8 @@ class InputSection extends React.Component {
         this.handleChange = this.handleChange.bind(this)
     }
     handleChange(event){
-        const text = event.target.value
+        let convert = new showdown.Converter()
+        const text = convert.makeHtml(event.target.value)
         this.props.updateValue(text)
     }
     render(){

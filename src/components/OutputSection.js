@@ -1,5 +1,4 @@
 import React from "react"
-import Convert from "showdown"
 
 class OutputSection extends React.Component {
     constructor(props){
@@ -7,11 +6,11 @@ class OutputSection extends React.Component {
     }
     render(){
         return (
-            <div id="preview">{this.props.sendText}</div>
-
+            <div id="preview" 
+                dangerouslySetInnerHTML={{__html:this.props.sendText}}
+            >
+            </div>
         )
     }
-
 }
-
 export default OutputSection

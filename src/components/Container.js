@@ -28,7 +28,6 @@ class Container extends React.Component {
     handleFileExt(event){
         this.setState({fileextention: event.target.value})
     }
-
     render(){
         console.log(this.state.text)
         return(
