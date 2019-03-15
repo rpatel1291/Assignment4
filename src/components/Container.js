@@ -13,7 +13,6 @@ class Container extends React.Component {
             text:"",
             filename:"Default",
             fileextention:"html",
-            // fullFileName:filename+"."+fileextention,
             html:"",
         }
         this.handleFileName = this.handleFileName.bind(this)
@@ -23,7 +22,8 @@ class Container extends React.Component {
         this.setState({text})
     }
     handleFileName(event){
-        this.setState({filename: event.target.value})
+        if(event.target.value === ""){this.setState({filename:"Default"})}
+        else this.setState({filename: event.target.value})
     }
     handleFileExt(event){
         this.setState({fileextention: event.target.value})
