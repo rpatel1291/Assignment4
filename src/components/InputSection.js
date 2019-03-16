@@ -9,6 +9,7 @@ class InputSection extends React.Component {
         this.handleChange = this.handleChange.bind(this)
     }
     handleChange(event){
+        this.props.updateMd(event.target.value)
         let convert = new showdown.Converter()
         const text = convert.makeHtml(event.target.value)
         this.props.updateValue(text)
